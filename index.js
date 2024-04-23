@@ -3,7 +3,11 @@ const fs = require('fs');
 const path = require('path');
 const cors = require('cors');
 const app = express();
-app.use(cors());
+const corsOptions = {
+    origin: 'http://localhost:5000', 
+    optionsSuccessStatus: 200 
+};
+  app.use(cors(corsOptions));
 const port = 4000;
 
 app.get('/', (req, res) => {
